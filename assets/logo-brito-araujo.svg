@@ -1,0 +1,21 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 335" role="img" aria-labelledby="title desc">
+  <title id="title">Brito &amp; Araújo Construtora</title>
+  <desc id="desc">Logo Brito &amp; Araújo Construtora com ícone de casa rosa e texto roxo.</desc>
+  <rect width="490" height="335" fill="#ffffff"/>
+
+  <g fill="none" stroke="#ff2d7f" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M183 162 L245 112 L307 162"/>
+    <path d="M210 140 V194 H280 V140"/>
+    <path d="M232 194 V169 H258 V194"/>
+    <path d="M222 131 V113 H244"/>
+    <path d="M276 132 V108 H294 V140"/>
+  </g>
+
+  <g fill="#ff2d7f">
+    <rect x="226" y="148" width="11" height="11" rx="1.5"/>
+    <rect x="253" y="148" width="11" height="11" rx="1.5"/>
+  </g>
+
+  <text x="245" y="217" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#68425a" letter-spacing="1.2">BRITO &amp; ARAÚJO</text>
+  <text x="245" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="800" fill="#ff2d7f" letter-spacing="5">CONSTRUTORA</text>
+</svg>

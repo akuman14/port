@@ -747,7 +747,7 @@ h2 {
 }
 
 .contact-logo-panel img {
-    width: min(100%, 360px);
+    width: min(100%, 460px);
     height: auto;
     object-fit: contain;
 }
@@ -945,7 +945,7 @@ h2 {
         padding: 32px;
     }
     .contact-logo-panel img {
-        width: min(100%, 260px);
+        width: min(100%, 340px);
     }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
@@ -1017,6 +1017,7 @@ h2 {
         text-align: center;
     }
 }
+
 
 
 
