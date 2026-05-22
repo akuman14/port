@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================
        1. CABEÇALHO COM ESTILO NO SCROLL
@@ -100,60 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-
     /* ==========================================
-       5. FORMULÁRIO DE ORÇAMENTO COM FEEDBACK TOAST
-       ========================================== */
-    const quoteForm = document.getElementById('quote-form');
-    const toast = document.getElementById('toast');
-
-    if (quoteForm) {
-        quoteForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Impede o recarregamento padrão da página
-            
-            // Aqui você capturaria os dados do formulário
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                projectType: document.getElementById('project-type').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Exibindo no console para que Fernando veja o fluxo de dados
-            console.log('Dados do Orçamento Recebidos:', formData);
-            
-            // Efeito visual do botão de envio
-            const submitBtn = quoteForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Enviando... <i data-lucide="loader" class="animate-spin"></i>';
-            submitBtn.disabled = true;
-            lucide.createIcons();
-            
-            // Simular uma requisição de rede (1.5 segundos)
-            setTimeout(() => {
-                // Exibe o Toast de Sucesso
-                toast.classList.add('show');
-                
-                // Limpa o formulário
-                quoteForm.reset();
-                
-                // Restaura o botão
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                lucide.createIcons();
-                
-                // Oculta o toast após 4 segundos
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 4000);
-                
-            }, 1500);
-        });
-    }
-
-    /* ==========================================
-       6. ANIMAÇÃO DE HOLOFOTE NEON (HERO GLOW)
+       5. ANIMAÇÃO DE HOLOFOTE NEON (HERO GLOW)
        ========================================== */
     const heroSection = document.getElementById('inicio');
     const heroGlow = document.querySelector('.hero-glow');
@@ -169,3 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+
+
+
