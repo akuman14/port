@@ -735,6 +735,23 @@ h2 {
     margin-bottom: 0;
 }
 
+.contact-logo-panel {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 48px;
+}
+
+.contact-logo-panel img {
+    width: min(100%, 360px);
+    height: auto;
+    object-fit: contain;
+}
+
 /* ==========================================
    FOOTER (RODAPÉ)
    ========================================== */
@@ -923,6 +940,13 @@ h2 {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+    .contact-logo-panel {
+        min-height: 280px;
+        padding: 32px;
+    }
+    .contact-logo-panel img {
+        width: min(100%, 260px);
+    }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 30px;
@@ -993,5 +1017,6 @@ h2 {
         text-align: center;
     }
 }
+
 
 
