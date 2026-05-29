@@ -1021,3 +1021,21 @@ h2 {
 
 
 
+
+.contact-phone {
+    color: inherit;
+    font-weight: 400;
+    transition: font-weight 0.2s ease, color 0.2s ease;
+}
+
+.contact-phone:hover {
+    font-weight: 700;
+}
+
+.whatsapp-link {
+    cursor: pointer;
+}
+
+.whatsapp-link:hover {
+    color: var(--primary);
+}
