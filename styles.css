@@ -1,11 +1,11 @@
-﻿/* ==========================================
+/* ==========================================
    VARIABLES & DESIGN SYSTEM
    ========================================== */
 :root {
-    /* Color Palette - Pink and Black Theme */
-    --primary: #ff2d7f; /* Pink */
-    --primary-hover: #db2777;
-    --primary-light: rgba(255, 45, 127, 0.12);
+    /* Color Palette - Gold and Black Theme */
+    --primary: #d4af37; /* Metallic Gold */
+    --primary-hover: #b89228;
+    --primary-light: rgba(212, 175, 55, 0.15);
     
     --secondary: #000000; /* Black */
     --secondary-hover: #1c1c1c;
@@ -30,7 +30,7 @@
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-    --shadow-primary: 0 10px 15px -3px rgba(255, 45, 127, 0.3);
+    --shadow-primary: 0 10px 15px -3px rgba(212, 175, 55, 0.35);
     
     /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -218,11 +218,23 @@ h2 {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--white);
+}
+
+.logo-img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+    border-radius: 6px;
+}
+
+.main-header.scrolled .logo-img {
+    height: 44px;
 }
 
 .logo-icon {
@@ -297,7 +309,7 @@ h2 {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, #0a0a0a 0%, #300216 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1608 100%);
     z-index: -2;
 }
 
@@ -307,7 +319,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(10, 10, 10, 0.9) 30%, rgba(10, 10, 10, 0.5) 100%);
+    background: linear-gradient(to right, rgba(10, 10, 10, 0.92) 30%, rgba(10, 10, 10, 0.55) 100%);
     z-index: 1;
 }
 
@@ -317,7 +329,7 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle 450px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 45, 127, 0.22) 0%, rgba(255, 45, 127, 0.06) 50%, transparent 100%);
+    background: radial-gradient(circle 450px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0.08) 50%, transparent 100%);
     z-index: 1;
     pointer-events: none;
     opacity: 0;
@@ -340,8 +352,8 @@ h2 {
 .hero-badge {
     display: inline-block;
     padding: 6px 16px;
-    background-color: rgba(255, 45, 127, 0.15);
-    border: 1px solid rgba(255, 45, 127, 0.3);
+    background-color: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.35);
     color: var(--primary);
     border-radius: 50px;
     font-size: 0.875rem;
@@ -361,7 +373,7 @@ h2 {
 
 .hero-content h1 span {
     color: var(--primary);
-    background: linear-gradient(to right, var(--primary), #ff7bb0);
+    background: linear-gradient(to right, var(--primary), #f7e59f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -532,7 +544,7 @@ h2 {
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(255, 45, 127, 0.2);
+    border-color: rgba(212, 175, 55, 0.25);
 }
 
 .service-icon-box {
@@ -1039,3 +1051,291 @@ h2 {
 .whatsapp-link:hover {
     color: var(--primary);
 }
+
+/* ==========================================
+   PRIVACY POLICY PAGE STYLES
+   ========================================== */
+.privacy-hero {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #161307 100%);
+    padding: 130px 0 60px 0;
+    color: var(--white);
+    position: relative;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--white);
+    transform: translateX(-4px);
+}
+
+.privacy-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.privacy-hero h1 span {
+    color: var(--primary);
+    background: linear-gradient(to right, var(--primary), #f7e59f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.privacy-hero p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    opacity: 0.9;
+    max-width: 700px;
+}
+
+.privacy-update-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 6px 14px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.privacy-update-badge i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+.privacy-content-section {
+    padding: 70px 0 100px 0;
+    background-color: var(--light-bg);
+}
+
+.privacy-notice-box {
+    display: flex;
+    gap: 25px;
+    background-color: var(--white);
+    border-left: 5px solid var(--primary);
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.notice-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.notice-icon i {
+    width: 28px;
+    height: 28px;
+}
+
+.privacy-notice-box h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+    margin-bottom: 10px;
+}
+
+.privacy-notice-box p {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.privacy-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.privacy-card {
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: var(--transition);
+}
+
+.privacy-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(212, 175, 55, 0.25);
+}
+
+.privacy-card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 15px;
+}
+
+.card-number {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    background-color: var(--primary-light);
+    padding: 6px 14px;
+    border-radius: var(--border-radius);
+}
+
+.card-title-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-title-box i {
+    width: 24px;
+    height: 24px;
+    color: var(--dark-bg);
+}
+
+.privacy-card-header h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.privacy-card p {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.privacy-card p:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.privacy-list li {
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.privacy-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+}
+
+.privacy-list li strong {
+    color: var(--dark-bg);
+}
+
+.dpo-card {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a1a 100%);
+    color: var(--white);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.dpo-card .privacy-card-header {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.dpo-card .card-title-box i {
+    color: var(--primary);
+}
+
+.dpo-card .privacy-card-header h2 {
+    color: var(--white);
+}
+
+.dpo-card p {
+    color: var(--text-light);
+    opacity: 0.9;
+}
+
+.dpo-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.dpo-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.dpo-item i {
+    color: var(--primary);
+    width: 20px;
+    height: 20px;
+}
+
+.dpo-item a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.dpo-item a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade da Página de Privacidade */
+@media (max-width: 768px) {
+    .privacy-hero h1 {
+        font-size: 2rem;
+    }
+    .privacy-notice-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .privacy-card {
+        padding: 25px 20px;
+    }
+    .privacy-card-header h2 {
+        font-size: 1.15rem;
+    }
+}
+
