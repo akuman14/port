@@ -1334,8 +1334,289 @@ h2 {
     .privacy-card {
         padding: 25px 20px;
     }
-    .privacy-card-header h2 {
-        font-size: 1.15rem;
+}
+
+/* ==========================================
+   PORTFOLIO OVERLAY & MODAL STYLES
+   ========================================== */
+.portfolio-card {
+    cursor: pointer;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary);
+    color: var(--dark-bg);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-primary);
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+
+.portfolio-card:hover .view-btn {
+    transform: translateY(0);
+}
+
+.view-btn i {
+    width: 18px;
+    height: 18px;
+}
+
+/* Modal Lock Scroll */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Modal Overlay (Fundo Escurecido com Blur) */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Card (Card Centralizado) */
+.modal-card {
+    position: relative;
+    background-color: var(--dark-card);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: var(--border-radius-lg);
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.2);
+    padding: 30px;
+    color: var(--white);
+    transform: scale(0.92) translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1) translateY(0);
+}
+
+/* 1. Botão Fechar (X) */
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background-color: var(--primary);
+    color: var(--dark-bg);
+    border-color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.modal-close i {
+    width: 22px;
+    height: 22px;
+}
+
+/* 2. Cabeçalho do Modal */
+.modal-header {
+    margin-bottom: 20px;
+    padding-right: 50px;
+}
+
+.modal-header .category-tag {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.modal-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0;
+}
+
+/* 3. Carrossel / Slider */
+.modal-carousel {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.carousel-slide-wrapper {
+    width: 100%;
+    height: 480px;
+    max-height: 60vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #050505;
+}
+
+.carousel-slide-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Setas do Carrossel */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(10, 10, 10, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: var(--transition);
+    backdrop-filter: blur(4px);
+}
+
+.carousel-btn:hover {
+    background-color: var(--primary);
+    color: var(--dark-bg);
+    box-shadow: var(--shadow-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: 15px;
+}
+
+.carousel-next {
+    right: 15px;
+}
+
+.carousel-btn i {
+    width: 24px;
+    height: 24px;
+}
+
+/* Dots (Indicadores de Posição) */
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 6px 12px;
+    border-radius: 50px;
+    backdrop-filter: blur(4px);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background-color: var(--primary);
+    width: 24px;
+    border-radius: 10px;
+}
+
+/* 4. Descrição em Texto */
+.modal-body p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 768px) {
+    .modal-card {
+        padding: 20px 15px;
+        max-height: 95vh;
+    }
+    .modal-header h2 {
+        font-size: 1.4rem;
+    }
+    .carousel-slide-wrapper {
+        height: 320px;
+        max-height: 50vh;
+    }
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+    .carousel-prev {
+        left: 8px;
+    }
+    .carousel-next {
+        right: 8px;
     }
 }
+
+
 
