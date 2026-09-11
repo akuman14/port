@@ -186,6 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (mainImgSrc) currentImages = [mainImgSrc];
         }
 
+        // Pré-carregamento das imagens (Preload) para remover o delay ao trocar fotos
+        currentImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
         modalTitle.innerText = title;
         modalCategory.innerText = tag;
         modalDescription.innerText = desc;
